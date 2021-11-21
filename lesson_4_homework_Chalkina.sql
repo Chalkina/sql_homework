@@ -4,8 +4,22 @@
 --task13 (lesson3)
 --Компьютерная фирма: Вывести список всех продуктов и производителя с указанием типа продукта (pc, printer, laptop). 
 --Вывести: model, maker, type
-select model, maker, type
-from product
+select product.maker, product.model, product.type  
+from pc 
+join product 
+on pc.model = product.model 
+
+union all 
+select product.maker, product.model, product.type    
+from printer 
+join product 
+on printer.model = product.model 
+
+union all 
+select product.maker, product.model, product.type   
+from laptop 
+join product 
+on laptop.model = product.model 
 
 --task14 (lesson3)
 --Компьютерная фирма: При выводе всех значений из таблицы printer дополнительно вывести для тех, 
